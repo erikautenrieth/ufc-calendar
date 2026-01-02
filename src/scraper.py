@@ -1,13 +1,11 @@
 import re
 import requests
+
 from bs4 import BeautifulSoup
 from datetime import datetime
 
 # Constants
 UFC_EVENTS_URL = "https://www.ufc.com/events"
-REQUEST_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-}
 
 VS_KEYWORD = "vs"
 MAIN_CARD_KEYWORD = "Main Card"
@@ -23,7 +21,7 @@ MONTH_MAPPING = {
 
 def fetch_upcoming_events_html():
     """Fetch UFC events page and return BeautifulSoup object."""
-    page = requests.get(UFC_EVENTS_URL, headers=REQUEST_HEADERS)
+    page = requests.get(UFC_EVENTS_URL, headers={'User-Agent': 'Mozilla/5.0'})
     return BeautifulSoup(page.content, "html.parser")
 
 

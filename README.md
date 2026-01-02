@@ -10,20 +10,29 @@ pip install -r requirements.txt
 
 ## Dependencies
 
+**Web Scraping:**
 - beautifulsoup4
 - requests
-- google-api-python-client
+
+**Google Calendar:**
 - gcsa ([github.com/kuzmoyev/google-calendar-simple-api](https://github.com/kuzmoyev/google-calendar-simple-api))
+- google-api-python-client
 - google-auth
 - google-auth-oauthlib
-- lxml
 
 
 ## Setup
 
-1. Downloade `credentials.json` von Google Cloud Platform
-2. Lege `credentials.json` im Root-Verzeichnis ab
-3. Beim ersten Run öffnet sich der Browser zur Authentifizierung
+### Google Credentials erstellen
+
+Folge dieser [Anleitung](https://google-calendar-simple-api.readthedocs.io/en/latest/getting_started.html#credentials) um `credentials.json` zu generieren.
+
+### Lokal verwenden
+
+```bash
+python main.py
+```
+Browser öffnet sich → anmelden → `token.pickle` wird erstellt
 
 ## Verwendung
 
