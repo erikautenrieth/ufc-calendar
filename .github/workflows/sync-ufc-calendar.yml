@@ -21,8 +21,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       
-      - name: Create credentials file
-        run: echo '${{ secrets.GOOGLE_CREDENTIALS_JSON }}' > credentials.json
+      - name: Restore token.pickle
+        run: |
+          echo "${{ secrets.GOOGLE_TOKEN_PICKLE_BASE64 }}" | base64 --decode > token.pickle
       
       - name: Run UFC Calendar sync
         run: python main.py
