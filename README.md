@@ -2,11 +2,6 @@
 
 Automatisches Tool zum Scrapen von UFC-Events und deren Eintrag in Google Calendar.
 
-## Installation
-
-```bash
-pip install -r requirements.txt
-```
 
 ## Dependencies
 
@@ -21,24 +16,27 @@ pip install -r requirements.txt
 - google-auth-oauthlib
 
 
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+
 ## Setup
 
 ### Google Credentials erstellen
 
 Folge dieser [Anleitung](https://google-calendar-simple-api.readthedocs.io/en/latest/getting_started.html#credentials) um `credentials.json` zu generieren.
 
-### Lokal verwenden
-
-```bash
-python main.py
-```
-Browser öffnet sich → anmelden → `token.pickle` wird erstellt
 
 ## Verwendung
 
 ```bash
 python main.py
 ```
+
+Browser öffnet sich → anmelden → `token.pickle` wird erstellt
 
 ## Automatisierung (GitHub Actions)
 

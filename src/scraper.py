@@ -4,8 +4,8 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-# Constants
 UFC_EVENTS_URL = "https://www.ufc.com/events"
+
 
 VS_KEYWORD = "vs"
 MAIN_CARD_KEYWORD = "Main Card"
