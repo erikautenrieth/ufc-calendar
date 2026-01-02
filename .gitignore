@@ -1,0 +1,9 @@
+# Environment and token files
+.env
+credentials.json
+token.pickle
+token.json
+
+# Python cache
+__pycache__/
+.pytest_cache/.env
