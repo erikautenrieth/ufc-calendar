@@ -3,6 +3,9 @@
 Automatisches Tool zum Scrapen von UFC-Events und deren Eintrag in Google Calendar.
 
 
+![alt text](image.png)
+
+
 ## Dependencies
 
 **Web Scraping:**
