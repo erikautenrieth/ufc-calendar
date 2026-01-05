@@ -1,5 +1,5 @@
-from src.ufc_scraper import UfcScraper
-from src.calendar_handler import CalendarHandler
+from src.services.ufc_scraper import UfcScraper
+from src.services.calendar_handler import CalendarHandler
 from src.models import UfcEvent
 
 
