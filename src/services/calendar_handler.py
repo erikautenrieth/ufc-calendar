@@ -4,14 +4,15 @@ from gcsa.google_calendar import GoogleCalendar
 from gcsa.event import Event as GcsaEvent
 
 from src.models import UfcEvent
+from src.settings import settings
 
 
 class CalendarHandler:
     """Handles Google Calendar operations."""
 
-    def __init__(self, credentials_path: str = "credentials.json") -> None:
-        """Initialize Google Calendar connection."""
-        self.calendar = GoogleCalendar(credentials_path=credentials_path)
+    def __init__(self) -> None:
+        """Initialize Google Calendar connection using global settings."""
+        self.calendar = GoogleCalendar(credentials_path=str(settings.credentials_path))
 
     def get_existing_events(self) -> set:
         """Get set of existing event titles."""

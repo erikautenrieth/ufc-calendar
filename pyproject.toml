@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "ufc-calendar"
+version = "0.1.0"
+description = "Scrape upcoming UFC events and sync them to Google Calendar"
+authors = [""]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+google-api-python-client = "2.187.0"
+google-auth = "2.38.0"
+google-auth-oauthlib = "1.2.3"
+google-auth-httplib2 = "0.3.0"
+gcsa = "2.6.0"
+beautifulsoup4 = "4.12.3"
+requests = "2.32.3"
+pydantic = "2.5.1"
+pydantic-settings = "^2.11.0"
+
+[tool.poetry.dev-dependencies]
+black = "23.1.0"
+isort = "5.12.0"
+flake8 = "6.1.0"
+pre-commit = "3.4.0"
+mypy = "1.9.0"
+types-requests = "2.31.0"
+pytest = "7.4.0"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

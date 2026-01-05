@@ -13,7 +13,7 @@ def main():
         print("No upcoming UFC fights found.")
         return
     
-    handler = CalendarHandler(credentials_path='credentials.json')
+    handler = CalendarHandler()
     handler.sync_fights_to_calendar(fights)
 
 
