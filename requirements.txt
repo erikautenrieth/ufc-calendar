@@ -5,3 +5,4 @@ google-auth-httplib2==0.3.0
 gcsa==2.6.0
 beautifulsoup4==4.12.3
 requests==2.32.3
+pydantic==2.5.1
