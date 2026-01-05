@@ -31,7 +31,7 @@ class CalendarHandler:
                 print(f"✅ Added: {fighters}")
                 added_count += 1
             else:
-                print(f"⏭️ Already exists: {fighters}")
+                print(f"⏭️  Already exists: {fighters}")
         
         print(f"\n✅ Done! Added {added_count} new events")
         return added_count

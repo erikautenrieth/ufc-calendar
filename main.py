@@ -1,11 +1,12 @@
-from src.scraper import get_upcoming_ufc_fights
+from src.ufc_scraper import UfcScraper
 from src.calendar_handler import CalendarHandler
 
 
 def main():
     """Main function - Sync UFC fights to Google Calendar."""
     # Get upcoming fights
-    fights = get_upcoming_ufc_fights()
+    scraper = UfcScraper()
+    fights = scraper.get_upcoming_fights()
     print(f"Found {len(fights)} upcoming fights\n")
     
     if not fights:

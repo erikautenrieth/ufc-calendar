@@ -2,9 +2,9 @@
 
 Automatic tool to scrape upcoming UFC events and add them to Google Calendar.
 
-<img src="image.png" alt="Calendar screenshot" width="360" />
+<img src="docs/calendar_image.png" alt="Calendar screenshot" width="360" />
 
-We use the `gcsa` library to write events to Google Calendar: https://github.com/kuzmoyev/google-calendar-simple-api
+We use the [gcsa](https://github.com/kuzmoyev/google-calendar-simple-api) library to write events to Google Calendar.
 
 ## Setup
 
