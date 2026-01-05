@@ -2,25 +2,23 @@
 
 Automatic tool to scrape upcoming UFC events and add them to Google Calendar.
 
-![Calendar screenshot](image.png)
+<img src="image.png" alt="Calendar screenshot" width="360" />
 
 We use the `gcsa` library to write events to Google Calendar: https://github.com/kuzmoyev/google-calendar-simple-api
 
 ## Setup
 
-- Install dependencies:
+1. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-- Create Google API credentials (see the gcsa guide):
+2. Create Google API credentials (follow the gcsa guide):
+   https://google-calendar-simple-api.readthedocs.io/en/latest/getting_started.html#credentials
+   This generates `credentials.json`.
 
-https://google-calendar-simple-api.readthedocs.io/en/latest/getting_started.html#credentials
-
-This produces `credentials.json`.
-
-- Run and authenticate (creates `token.pickle`):
+3. Run the script and authenticate (creates `token.pickle`):
 
 ```bash
 python main.py
