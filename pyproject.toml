@@ -2,7 +2,7 @@
 name = "ufc-calendar"
 version = "0.1.0"
 description = "Scrape upcoming UFC events and sync them to Google Calendar"
-authors = [""]
+authors = ["Erik Autenrieth"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
