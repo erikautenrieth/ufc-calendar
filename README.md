@@ -1,73 +1,53 @@
 # UFC Calendar
 
-Automatisches Tool zum Scrapen von UFC-Events und deren Eintrag in Google Calendar.
+Automatic tool to scrape upcoming UFC events and add them to Google Calendar.
 
+![Calendar screenshot](image.png)
 
-![alt text](image.png)
+We use the `gcsa` library to write events to Google Calendar: https://github.com/kuzmoyev/google-calendar-simple-api
 
+## Setup
 
-## Dependencies
-
-**Web Scraping:**
-- beautifulsoup4
-- requests
-
-**Google Calendar:**
-- gcsa ([github.com/kuzmoyev/google-calendar-simple-api](https://github.com/kuzmoyev/google-calendar-simple-api))
-- google-api-python-client
-- google-auth
-- google-auth-oauthlib
-
-
-## Installation
+- Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
+- Create Google API credentials (see the gcsa guide):
 
-## Setup
+https://google-calendar-simple-api.readthedocs.io/en/latest/getting_started.html#credentials
 
-### Google Credentials erstellen
+This produces `credentials.json`.
 
-Folge dieser [Anleitung](https://google-calendar-simple-api.readthedocs.io/en/latest/getting_started.html#credentials) um `credentials.json` zu generieren.
-
-
-## Verwendung
+- Run and authenticate (creates `token.pickle`):
 
 ```bash
 python main.py
 ```
 
-Browser öffnet sich → anmelden → `token.pickle` wird erstellt
+## Automation (GitHub Actions)
 
-## Automatisierung (GitHub Actions)
+The workflow runs on the 1st of each month or manually. To add the token to GitHub:
 
-Der Workflow läuft automatisch am 1. des Monats oder kann manuell getriggert werden.
-
-### Setup
-
-1. **Lokal authentifizieren** (einmalig):
+1. Authenticate locally once:
    ```bash
    python main.py
    ```
-   Browser öffnet sich → anmelden → `token.pickle` wird erstellt
+2. Encode `token.pickle` to base64 and copy it.
 
-2. **Token in base64 konvertieren** (PowerShell/Windows):
-   ```powershell
-   [Convert]::ToBase64String([IO.File]::ReadAllBytes('token.pickle')) | Set-Clipboard
-   ```
-   
-   Oder (bash/macOS/Linux):
-   ```bash
-   base64 token.pickle | pbcopy
-   ```
+PowerShell (Windows):
+```powershell
+[Convert]::ToBase64String([IO.File]::ReadAllBytes('token.pickle')) | Set-Clipboard
+```
 
-3. **GitHub Secret erstellen**:
-   - Gehe zu **Settings → Secrets and variables → Actions**
-   - Click **New repository secret**
+macOS / Linux:
+```bash
+base64 token.pickle | pbcopy
+```
+
+3. In GitHub: Settings → Secrets and variables → Actions → New repository secret
    - Name: `GOOGLE_TOKEN_PICKLE_BASE64`
-   - Value: Das base64-encodierte Token einfügen
-   - **Save**
+   - Value: paste the base64 token
 
-4. **Testen**: Im **Actions** Tab → **Sync UFC Calendar** → **Run workflow**
+4. Test via Actions → Sync UFC Calendar → Run workflow
